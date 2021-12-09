@@ -1,5 +1,5 @@
 FROM node:16-alpine as builder
-LABEL org.opencontainers.image.source="https://github.com/MitsyBot/cdn"
+LABEL org.opencontainers.image.source="https://github.com/MitsyBot/Cdn"
 
 RUN mkdir -p /usr/src/cdn
 WORKDIR /usr/src/cdn
