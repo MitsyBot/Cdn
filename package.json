@@ -1,0 +1,23 @@
+{
+  "name": "mitsy-cdn",
+  "version": "1.0.0",
+  "description": "Servidor de registro de imagens da mitsy",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node -r dotenv/config ."
+  },
+  "author": "Duuuuardo",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
+    "multer": "^1.4.2",
+    "exif-be-gone": "^1.2.0",
+    "file-type": "^16.5.0",
+    "form-data": "^4.0.0",
+    "fs-extra": "^10.0.0",
+    "image-size": "^1.0.0"
+  }
+}
