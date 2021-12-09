@@ -3,7 +3,7 @@ name: GHCR-MITSY-CDN
 on:
   push:
     branches:
-      - development
+      - master
 
 jobs:
   push_to_registry:
