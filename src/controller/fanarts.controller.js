@@ -19,7 +19,7 @@ function replaceAll(str, match, replacement){
 
 module.exports = class AttachmentController {
   static async postFanart(req, res) {
-    if (!req.file) res.status(200).json({ error: "arquivo não encotnrado" });
+    if (!req.file) return res.status(200).json({ error: "arquivo não encotnrado" });
     const { user_id } = req.params;
 
     const { buffer, mimetype, size, originalname } = req.file;

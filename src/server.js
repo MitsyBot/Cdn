@@ -10,7 +10,7 @@ const MitsyCDNRoutes = require('./routes')
 
 const app = express()
 const server = http.createServer(app)
-
+app.use(cors());
 app.use('/', MitsyCDNRoutes);
 
 app.use(NotFound);

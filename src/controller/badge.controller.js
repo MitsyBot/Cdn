@@ -19,7 +19,7 @@ function replaceAll(str, match, replacement){
 
 module.exports = class AttachmentController {
   static async postMitsyBadge(req, res) {
-    if (!req.file) res.status(200).json({ error: "arquivo não encotnrado" });
+    if (!req.file) return res.status(200).json({ error: "arquivo não encotnrado" });
 
     const { buffer, mimetype, size, originalname } = req.file;
     const filename = replaceAll(originalname, ' ', '_').replace(/[^a-zA-Z0-9._]+/g, "");

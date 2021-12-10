@@ -19,7 +19,7 @@ function replaceAll(str, match, replacement){
 
 module.exports = class AttachmentController {
   static async postBadge(req, res) {
-    if (!req.file) res.status(200).json({ error: "arquivo não encotnrado" });
+    if (!req.file) return res.status(200).json({ error: "arquivo não encotnrado" });
 
     const { buffer, mimetype, size, originalname } = req.file;
     const { guild_id } = req.params;
