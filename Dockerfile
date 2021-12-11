@@ -16,4 +16,4 @@ COPY --from=builder /usr/src/cdn /usr/src/cdn
 
 CMD ["npm", "run", "start"]
 
-LABEL org.opencontainers.image.source="https://github.com/MitsyBot/Motherlode"
+LABEL org.opencontainers.image.source="https://github.com/MitsyBot/Cdn"
