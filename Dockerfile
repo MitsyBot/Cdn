@@ -1,4 +1,4 @@
-From node:16-alpine
+FROM node:16-alpine
 LABEL org.opencontainers.image.source="https://github.com/MitsyBot/Cdn"
 
 FROM node:16-alpine as builder
