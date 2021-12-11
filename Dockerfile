@@ -11,6 +11,7 @@ COPY . /usr/src/cdn/
 RUN npm install
 
 FROM node:16-alpine as runner
+LABEL org.opencontainers.image.source="https://github.com/MitsyBot/Motherlode"
 WORKDIR /usr/src/cdn
 COPY --from=builder /usr/src/cdn /usr/src/cdn
 
