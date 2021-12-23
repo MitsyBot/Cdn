@@ -14,4 +14,6 @@ FROM node:16-alpine as runner
 WORKDIR /usr/src/cdn
 COPY --from=builder /usr/src/cdn /usr/src/cdn
 
+EXPOSE 8000
+
 CMD ["npm", "run", "start"]
