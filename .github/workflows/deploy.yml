@@ -43,4 +43,4 @@ jobs:
           script: |
             docker pull ghcr.io/mitsybot/cdn:latest
             docker stop Cdn
-            docker run -it --rm -d --mount source=cdn-data,target=/cdn --name Cdn ghcr.io/mitsybot/cdn:latest
+            docker run -it --rm -d -p 8000:8000 --mount source=cdn-data,target=/cdn --name Cdn ghcr.io/mitsybot/cdn:latest
