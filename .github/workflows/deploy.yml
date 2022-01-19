@@ -41,6 +41,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            docker pull ghcr.io/mitsybot/cdn:latest
             docker stop Cdn
-            docker run -it --rm -d -p 8000:8000 --mount source=cdn-data,target=/cdn --name Cdn ghcr.io/mitsybot/cdn:latest
+            docker rm Cdn
+            docker image rm ghcr.io/mitsybot/cdn:latest
+            docker pull ghcr.io/mitsybot/cdn:latest
+            docker run -it -d -p 8000:8000 -v cdn-data:/data/cdn --name Cdn ghcr.io/mitsybot/cdn:latest
