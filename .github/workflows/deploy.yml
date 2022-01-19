@@ -42,6 +42,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             docker stop Cdn
+            docker rm Cdn
             docker image rm ghcr.io/mitsybot/cdn:latest
             docker pull ghcr.io/mitsybot/cdn:latest
-            docker run -it --rm -d -p 8000:8000 -v cdn-data:/data/cdn --name Cdn ghcr.io/mitsybot/cdn:latest
+            docker run -it -d -p 8000:8000 -v cdn-data:/data/cdn --name Cdn ghcr.io/mitsybot/cdn:latest
