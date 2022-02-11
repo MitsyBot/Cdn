@@ -57,7 +57,7 @@ module.exports = class AttachmentController {
 		const path = `fanarts/${user_id}/${filename}`;
 
 		const file = await storage.get(path);
-    if (!file) res.status(200).json({ error: "arquivo não encotnrado" });
+    if (!file) return res.status(200).json({ error: "arquivo não encontrado" });
 		const type = await FileType.fromBuffer(file);
 		let content_type = type.mime || "application/octet-stream";
 

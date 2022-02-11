@@ -56,7 +56,7 @@ module.exports = class TemplateController {
 		const path = `template/${filename}`;
 
 		const file = await storage.get(path);
-    if (!file) res.status(200).json({ error: "arquivo não encotnrado" });
+        if (!file) return res.status(200).json({ error: "arquivo não encotnrado" });
 		const type = await FileType.fromBuffer(file);
 		let content_type = type.mime || "application/octet-stream";
 
