@@ -8,6 +8,7 @@ const Fanart = require('./controller/fanarts.controller')
 const CommunityBadge = require('./controller/community.badges.controller')
 const CommunityBackground = require('./controller/community.background.controller')
 const Badge = require('./controller/badge.controller')
+const Template = require('./controller/template.controller')
 
 const router = Router()
 
@@ -21,6 +22,11 @@ router.delete('/community/attachments/:user_id/:filename', isAuth, Attachment.de
 router.post('/background/', multer.single("file"), isAuth, Background.postMitsyBackground);
 router.get('/background/:filename', Background.getBackground)
 router.delete('/background/:filename', isAuth, Background.deleteBackground)
+
+// Maneira com que o jeremias vai enviar novos templates para a pasta
+router.post('/template/', multer.single("file"), isAuth, Template.postMitsyTemplate);
+router.get('/template/:filename', Template.getTemplate)
+router.delete('/template/:filename', isAuth, Template.deleteTemplate)
 
 // Maneira com que o jeremias vai enviar novos badges para a pasta
 router.post('/badge/', multer.single("file"), isAuth, Badge.postMitsyBadge);
