@@ -44,7 +44,6 @@ pipeline {
             remote.allowAnyHosts = true
             sshCommand remote: remote, command: "docker stop Cdn"
             sshCommand remote: remote, command: "docker rm Cdn"
-            sshCommand remote: remote, command: "docker image rm ghcr.io/poluxtrail/cdn:latest"
             sshCommand remote: remote, command: "docker pull ghcr.io/poluxtrail/cdn:latest"
             sshCommand remote: remote, command: "docker run -it -d -p 8000:8000 -v cdn-data:/data/cdn --name Cdn ghcr.io/poluxtrail/cdn:latest"
             }
