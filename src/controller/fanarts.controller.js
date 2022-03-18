@@ -18,11 +18,11 @@ function replaceAll(str, match, replacement){
 }
 
 module.exports = class AttachmentController {
-  static async postFanart(req, res) {
+  static async postImage(req, res) {
     if (!req.file) return res.status(200).json({ error: "arquivo não encotnrado" });
-    const { user_id } = req.params;
 
     const { buffer, mimetype, size, originalname } = req.file;
+    const { user_id } = req.params;
     const filename = replaceAll(originalname, ' ', '_').replace(/[^a-zA-Z0-9._]+/g, "");
 
     const path = `fanarts/${user_id}/${filename}`;
@@ -52,7 +52,7 @@ module.exports = class AttachmentController {
     return res.json(file);
   }
 
-  static async getFanart(req, res) {
+  static async getImage(req, res) {
     const { user_id, filename } = req.params;
 		const path = `fanarts/${user_id}/${filename}`;
 
