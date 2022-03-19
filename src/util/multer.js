@@ -5,7 +5,7 @@ const multer = multerConfig({
 	limits: {
 		fields: 10,
 		files: 10,
-		fileSize: 1366 * 768 * 100,
+		fileSize: 2366 * 768 * 100,
 	},
 });
 
